@@ -25,6 +25,7 @@ pipeline {
     stage('Publish Image') {
       steps {
         script {
+          echo "before crash"
           docker.withRegistry('', registryCredential){
             dockerImage.push()
             dockerImage.push("latest")
